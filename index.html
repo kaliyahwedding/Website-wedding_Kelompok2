@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wedding Kagisna ❤ Aliyah</title>
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/favicon.jpg">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- lightbox2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="overflow-hidden">
+  <!-- Music -->
+  <audio class="audio" src="assets/audio/wedding.mp3" autoplay type="audio" loop></audio>
+  <!-- Sfx Door -->
+  <audio id="doorSound" src="assets/audio/door.mp3"></audio>
+
+  <!-- door section -->
+  <!-- door section -->
+<!-- door section -->
+<div id="door-section" class="open" onclick="mulai()">
+  <h1 class="h1-heading left huruf-sambung">Kagisna</h1>
+  <h1 class="h1-heading right huruf-sambung">Aliyah</h1>
+  <div class="doors">
+    <div class="door left">
+      <img src="assets/img/door-left.png" alt="Left Door">
+    </div>
+    <div class="door right">
+      <img src="assets/img/door-right.png" alt="Right Door">
+    </div>
+  </div>
+</div>
+
+<style>
+  .open {
+  background: var(--white);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  overflow-y: hidden;
+  transition: transform 1s ease-in-out;
+}
+
+  #door-section {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .h1-heading {
+  position: absolute;
+  top: 10%;
+  font-size: 2.5rem;
+  z-index: 4;
+  color: #333;
+  font-family: 'Great Vibes', cursive; /* pastikan font ini dimuat */
+  white-space: nowrap;
+}
+
+.h1-heading.left {
+  left: 10%;
+  text-align: left;
+  font-size: 2rem;
+}
+.h1-heading.right {
+  position: absolute;
+  right: 0;
+  left: 50%;
+  transform: translateX(20%);
+  text-align: left;
+  font-size: 2rem;
+}
+  .doors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .door {
+    flex: 1;
+    max-width: 50%;
+  }
+
+  .door img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  /* Responsif di HP */
+  @media (max-width: 600px) {
+    .h1-heading {
+      font-size: 28px;
+      top: 5%;
+    }
+
+    .doors {
+      flex-direction: row;
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    .door {
+      max-width: 50%;
+    }
+
+    .door img {
+      width: 100%;
+      height: auto;
+    }
+  }
+</style>
+
+
+  <!-- content section -->
+  <div id="content-section">
+    <!-- navbar -->
+    <ul class="nav">
+      <span class="nav-music"></span>
+      <li>
+        <a href="#acara-section">
+          <i class="fas fa-fw fa-calendar-day"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#lokasi-section">
+          <i class="fas fa-fw fa-location-dot"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#love-story-section">
+          <i class="fas fa-fw fa-heart"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-item-music rotate" id="musicButton" onclick="toggleMusic(event)">
+          <i class="fas fa-fw fa-compact-disc"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#gallery-section">
+          <i class="fas fa-fw fa-image"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#gift-section">
+          <i class="fas fa-fw fa-gift"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#rsvp-section">
+          <i class="fas fa-fw fa-check-to-slot"></i>
+        </a>
+      </li>
+    </ul>
+
+    <!-- hero section -->
+    <section id="hero-section" style="width: 100%; height: 100vh; background: url('assets/img/foto-pengantinn.jpg') top left; background-size: cover; position: relative; background-position: center; z-index: 2;">    
+      <img src="assets/img/sparkle.gif" alt="sparkle" class="sparkle">
+      <div class="container text-center" style="padding-top: 170px;">
+        <h1 class="my-2 text-white huruf-sambung">Kagisna & Aliyah</h1>
+        <h4 class="my-2 text-white">Will soon be getting married on the date</h4>
+        <h4 class="my-2 text-white fw-bold">Wednesday, April 16, 2025</h4>
+        <div class="row my-3 d-flex justify-content-center" id="countdown-wedding">
+          <div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>0</h5> Day</div></div>
+          <div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>0</h5> Hour</div></div>
+          <div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>0</h5> Minute</div></div>
+          <div class="col-lg-1 col-3"><div class="text-center p-2 rounded text-light"><h5>0</h5> Second</div></div>
+        </div>
+        <a href="#pembuka-section" class="rounded-pill text-decoration-none btn btn-lg btn-get-started py-3"><i class="fas fa-fw fa-envelope-open-text"></i> Open Invitation</a>
+      </div>
+    </section>
+
+    <!-- pembuka section -->
+    <section id="pembuka-section" class="pembuka-section section-bg py-5">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center">
+              <h1 class="text-pink huruf-sambung fw-bold">Assalamu'alaikum</h1>
+              <h3>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h3>
+              <p>O mankind! Fear your Lord, who created you from a single soul (Adam), and from him created his mate (Eve); and from them both He spread many men and women. Fear Allah, by Whom you ask one another, and maintain the ties of kinship. Indeed, Allah is ever watchful over you.</p>
+              <p>(QS. An-Nisa' (4) : 1)</p>
+            </div>
+
+            <div class="row my-4 justify-content-center">
+              <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                <img src="assets/img/kagisnaw1.jpg" alt="wedding" class="img-fluid rounded-pill">
+              </div>
+            </div>
+
+            <div class="row my-3 justify-content-between">
+              <div class="col rounded" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="p-2 pt-3 text-center">
+                  <h1 class="text-center huruf-sambung">Kagisna Arkan Najmi</h1>
+                  <p>Son Of:</p>
+                  <p>Fikry Haidar Tabrani & Dini Cahyani</p>
+                </div>
+              </div>
+              <div class="col-sm-1 my-auto" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                <h1 class="text-center huruf-sambung">&</h1>
+              </div>
+              <div class="col rounded" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="p-2 pt-3 text-center">
+                  <h1 class="text-center huruf-sambung">Aliyah Putri Siti Mutmainah</h1>
+                  <p>Daughter Of:</p>
+                  <p>Rezon Farrel Ardian & Alma Ratna Pratiwi</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- acara section -->
+    <section id="acara-section" class="acara-section py-5">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h1 class="text-pink huruf-sambung fw-bold">Weddings</h1>
+              <p>It would be an honor and happiness for us if you would be willing to attend to give your prayers and blessings, we express our gratitude.</p>
+            </div>
+
+            <div class="row justify-content-between px-3 text-center">
+              <div class="col-lg-6 border my-2 rounded p-3 card-acara" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <h4>Marriage covenant</h4>
+                <hr>
+                <p><i class="fas fa-fw fa-calendar-day"></i>Wednesday, April 16, 2025</p>
+                <p><i class="fas fa-fw fa-clock"></i>08:00 WIB - Finished</p>
+                <p><i class="fas fa-fw fa-location-dot"></i>Location at SMK Plus Pratama Adi</p>
+                <a class="btn btn-lg btn-pink rounded-pill" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Akad+Nikah&details=Akad+Nikah+Kagisna+dan+Aliyah&location=Salah+satu+hotel+di+Jakarta&dates=20240113T131200Z%2F20240113T131200Z" target="_blank"><i class="fas fa-fw fa-calendar-day"></i> Simpan ke Kalender</a>
+              </div>
+              <div class="col-lg-6 border my-2 rounded p-3 card-acara" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                <h4>Resepsi</h4>
+                <hr>
+                <p><i class="fas fa-fw fa-calendar-day"></i> Wednesday, April 16, 2025</p>
+                <p><i class="fas fa-fw fa-clock"></i> 10:00 WIB - Finished</p>
+                <p><i class="fas fa-fw fa-location-dot"></i> Location at SMK Plus Pratama Adi</p>
+                <a class="btn btn-lg btn-pink rounded-pill" href="https://www.google.com/calendar/render?action=TEMPLATE&text=Resepsi+Pernikahan&details=Resepsi+Pernikahan+Kagisna+dan+Aliyah&location=Salah+satu+hotel+di+Jakarta&dates=20240114T131200Z%2F20240114T131200Z" target="_blank"><i class="fas fa-fw fa-calendar-day"></i> Simpan ke Kalender</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Lokasi Section -->
+    <section id="lokasi-section" class="lokasi-section py-5 section-bg">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h1 class="text-pink huruf-sambung fw-bold">Wedding Ceremony & Reception Location</h1>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-lg-12 text-center">
+                <a class="btn btn-lg btn-pink mb-4 rounded-pill" href="https://www.google.com/maps/place/SMK+Plus+Pratama+Adi/data=!4m7!3m6!1s0x2e68eb9ebeabafaf:0xf45be8140fce8544!8m2!3d-7.0484065!4d107.5930659!16s%2Fg%2F11b6ggdbrv!19sChIJr6-rvp7raC4RRIXODxToW_Q?authuser=0&hl=id&rclk=1" target="_blank"><i class="fas fa-fw fa-location-dot"></i> Buka di Google Maps</a>
+                <iframe class="mb-4 mb-lg-0 border-pink" src="https://maps.google.com/maps?q=SMK+Plus+Pratama+Adi&output=embed" width="100%" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- love story section -->
+    <section id="love-story-section" class="love-story-section py-5">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="section-title">
+          <h1 class="text-pink huruf-sambung fw-bold">Love Story</h1>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg">
+            <ul class="timeline">
+              <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-1.jpg');"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Kagisna and Aliyah's First Meeting</h3>
+                    <span class="timeline-date">15 March 2022</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>At a small playground in their small town, shy Kagisna and outgoing Aliyah first meet. Although they don't get along very well at first, there's an unexpected spark of chemistry between them.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-2.jpg');"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Friendship Grows</h3>
+                    <span class="timeline-date">2022 - 2023</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>As time went by, Kagisna and Aliyah became inseparable friends. They often played together and helped each other in trouble. During their elementary and middle school years, their friendship grew even more.</p>
+                  </div>
+                </div>
+              </li>
+              <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-3.jpg');"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Joy and trials</h3>
+                    <span class="timeline-date">2023 - 2024</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>As they enter adolescence, deeper feelings begin to grow between Kagisna and Aliyah. They face various trials together, but their love remains strong. Kagisna's courage and Aliyah's wisdom bring them closer to each other.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-4.jpg');"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Confession of Feelings</h3>
+                    <span class="timeline-date">14 February 2024</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>On Valentine's Day, Kagisna finally confirmed his feelings for Aliyah. With a pounding heart, he gave Aliyah a special gift and expressed his love. Aliyah smiled and replied that she felt the same way.</p>
+                  </div>
+                </div>
+              </li>
+              <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-5.jpg');"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Journey Together</h3>
+                    <span class="timeline-date">2024 - 2025</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>After confessing their feelings, Kagisna and Aliyah go on a long journey together. They overcome various obstacles together and support each other in every step of their lives. Their love deepens as time goes by.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-6.jpg');"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Engagement</h3>
+                    <span class="timeline-date">14 February 2025</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>Kagisna, dengan hati penuh keberanian, melamar Aliyah di tempat favorit mereka, taman kecil di tempat pertama kali mereka bertemu. Dengan sukses, Aliyah menerima lamaran tersebut dengan penuh kebahagiaan.</p>
+                  </div>
+                </div>
+              </li>
+              <li data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-7.jpg');"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">appy Marriage</h3>
+                    <span class="timeline-date">16 April 2025</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>On a carefully chosen date, Kagisna and Aliyah tied the knot in a simple and loving wedding. They promised to support each other through thick and thin throughout their lives.</p>
+                  </div>
+                </div>
+              </li>
+              <li class="timeline-inverted" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+                <div class="timeline-badge" style="background-image:url('assets/img/timeline/timeline-8.jpg');"></div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h3 class="timeline-title">Life Journey Together</h3>
+                    <span class="timeline-date">2025 - Sekarang</span>
+                  </div>
+                  <div class="timeline-body">
+                    <p>After getting married, Kagisna and Aliyah continue to walk their life journey together. With love, understanding, and support for each other, they face every challenge with their heads held high and their hearts full of happiness.</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- gallery section -->
+    <section id="gallery-section" class="gallery-section py-5 section-bg">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="section-title">
+          <h1 class="text-pink huruf-sambung fw-bold">Gallery</h1>
+        </div>
+
+        <div class="row" data-masonry='{"percentPosition": true }'>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/p1.jpg" data-lightbox="KagisnaAliyah" class="text-decoration-none">
+              <img src="assets/img/gallery/p1.jpg" alt="Kagisna & Aliyah" class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/p2.jpg" data-lightbox="KagisnaAliyah" class="text-decoration-none">
+              <img src="assets/img/gallery/p2.jpg" alt="Kagisna & Aliyah" class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/p3.jpg" data-lightbox="KagisnaAliyah" class="text-decoration-none">
+              <img src="assets/img/gallery/p3.jpg" alt="Kagisna & Aliyah" class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/p4.jpg" data-lightbox="KagisnaAliyah" class="text-decoration-none">
+              <img src="assets/img/gallery/p4.jpg" alt="Kagisna & Aliyah" class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/p5.jpg" data-lightbox="KagisnaAliyah" class="text-decoration-none">
+              <img src="assets/img/gallery/p5.jpg" alt="Kagisna & Aliyah" class="card-img border-pink">
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <a href="assets/img/gallery/p6.jpg" data-lightbox="KagisnaAliyah" class="text-decoration-none">
+              <img src="assets/img/gallery/p6.jpg" alt="Kagisna & Aliyah" class="card-img border-pink">
+            </a>
+          </div>
+
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- gift section -->
+    <section id="gift-section" class="gift-section py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title">
+              <h1 class="text-pink huruf-sambung fw-bold">Wedding Gift</h1>
+              <p>For those of you who wish to send wedding gifts, you can do so via the virtual account or e-wallet below:</p>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+                <button type="button" class="text-center btn btn-lg btn-pink mb-4 rounded-pill" data-bs-toggle="collapse" data-bs-target="#collapseHadiah"><i class="fas fa-fw fa-gift"></i> Send Gift</button>
+                <div class="collapse" id="collapseHadiah">
+                  <div class="my-4 mx-auto position-relative credit-card">
+                    <img src="assets/img/card/logo-bca.png" alt="Logo BCA" class="card-logo">
+                    <div class="card-container">
+                      <img src="assets/img/card/sim.png" alt="sim" class="card-sim">
+                      <div class="card-number">085871302154</div>
+                    </div>
+                    <div class="card-name mt-2">Dika Aringga</div>
+                    <a style="cursor: pointer;" onclick="copyText(this)" class="copy-button btn btn-light mt-3">
+                      <i class="fas fa-regular fa-copy"></i>
+                      Copy
+                    </a>
+                  </div>
+                  <div class="my-4 mx-auto position-relative credit-card">
+                    <img src="assets/img/card/logo-shopee.png" alt="Logo Shopee" class="card-logo">
+                    <div class="card-container">
+                      <img src="assets/img/card/sim.png" alt="sim" class="card-sim">
+                      <div class="card-number">0858 7130 2154</div>
+                    </div>
+                    <div class="card-name mt-2">Dika Aringga</div>
+                    <a style="cursor: pointer;" onclick="copyText(this)" class="copy-button btn btn-light mt-3">
+                      <i class="fas fa-regular fa-copy"></i>
+                      Copy
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- rsvp section -->
+    <section id="rsvp-section" class="rsvp-section section-bg py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center">
+              <h1 class="text-pink huruf-sambung fw-bold">RSVP</h1>
+              <p>Fill out the form below to confirm your attendance.</p>
+            </div>
+            <form action="https://script.google.com/macros/s/AKfycbyIfjWG5EjQiyYk3R8n0MnmlJM6TcOYWuG4HvBaq3VpbINVZyMZvvNVjCDLffH61Aq7/exec" class="row row-cols-md-auto g-3 align-items-center justify-content-center" id="rsvp-form" method="POST">
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="nama" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="nama" name="nama">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="jumlah" class="form-label">Amount</label>
+                  <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="5" length="1" value="1">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="mb-3">
+                  <label for="status" class="form-label">Status</label>
+                  <select name="status" id="status" class="form-select">
+                    <option value="0" selected>Choose One</option>
+                    <option value="Hadir">Present</option>
+                    <option value="Tidak Hadir">Not present</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 mt-3">
+                <div class="mt-3">
+                  <button type="submit" class="btn btn-kirim"><i class="fas fa-fw fa-paper-plane"></i> Send</button>
+                </div>
+              </div>
+            </form>
+            <div class="row mt-5 justify-content-center">
+              <div class="col-lg-12">
+                <div id="disqus_thread"></div>
+                <script>
+                    /**
+                    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+                    /*
+                    var disqus_config = function () {
+                    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                    };
+                    */
+                    (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://wedding-Kagisna-Aliyah-1.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- penutup section -->
+    <section id="penutup-section" style="position: relative; height: 100vh; color: white; display: flex; align-items: center;">
+      <div style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 1) 100%), url('assets/img/uhuy.jpg'); background-position: center; background-size: cover;"></div>
+      <div class="container text-center" style="position: relative; z-index: 2; padding-top: 50px;">
+      <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="section-title text-center">
+              <h1 class="text-pink huruf-sambung fw-bold">Wassalamu'alaikum</h1>
+              <p>It is a joy and honor for us, if you are willing to attend and give us your blessing.</p>
+              <h5 class="my-3">WE, THE HAPPY ONES</h5>
+              <h1 class="huruf-sambung">Kagisna & Aliyah</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer id="footer" class="mb-5 pb-5">
+      <div class="container py-5 text-center position-relative">
+        <div class="row">
+          <div class="col-12 my-3">
+            <a href="https://www.instagram.com/romanjuliii?igsh=NXcycWtpMmd4NW5o" target="_blank" class="text-decoration-none text-pink fw-bold">&copy; 2025. Made with ❤ by Dika Aringga</a>
+          </div>
+          <div class="col-12 my-3">
+            <a href="#" class="text-pink"><i class="fas fa-fw fa-arrow-up"></i> Back to top</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- aos -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- lightbox2 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.2/dist/sweetalert2.all.min.js" integrity="sha256-iSkyJ41luwYhZX4JnDUop92wix0y8SBGAW5tCnnCfZ4=" crossorigin="anonymous"></script>
+  <!-- masonry -->
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+  <!-- js -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
